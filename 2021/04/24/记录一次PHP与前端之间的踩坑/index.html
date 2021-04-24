@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://www.hualigs.cn/image/608420b22756a.jpg">
 <meta property="og:image" content="https://www.hualigs.cn/image/6084222d6bcda.jpg">
 <meta property="article:published_time" content="2021-04-24T12:57:38.000Z">
-<meta property="article:modified_time" content="2021-04-24T14:24:02.113Z">
+<meta property="article:modified_time" content="2021-04-24T14:27:47.668Z">
 <meta property="article:author" content="薛定的_饿猫">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hualigs.cn/image/608420b22756a.jpg">
@@ -372,9 +372,9 @@
 <p>​    输出如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?php eval($_POST[\&#39;cmd\&#39;]);?&gt;</span><br></pre></td></tr></table></figure>
 
-<p>​    继续调试可以发现，当“&lt;”符号后面是某些特殊字符或者数字的时候是可以正常输出的，而当后面是“？”和其他某些特殊字符或者字母的时候，浏览器的显示均是空白。</p>
+<p>​    继续调试可以发现，当“&lt;”符号后面是某些特殊字符或者数字的时候是可以正常输出的，而当后面是“?”和其他某些特殊字符或者字母的时候，浏览器的显示均是空白。</p>
 <p>​    <img src="https://www.hualigs.cn/image/608420b22756a.jpg"></p>
-<p>​    这里涉及到HTML实体，当 echo “&lt;s” 这一句代码在PHP中执行的时候，对于PHP来说，就是输出“&lt;?”的意思，它会正常去输出这两个字符，而当输出的字符显示在浏览器的时候，HTML会对其再进行一次解析，而这个”&lt;”在这个时候就成了标签的，当你后面跟上字母或者某些特殊字符的时候，浏览器会认为他们是一个标签，因此输出的结果是空白，而实际上在源代码中是可以看到的。</p>
+<p>​    这里涉及到HTML实体，当 echo “&lt;s” 这一句代码在PHP中执行的时候，对于PHP来说，就是输出“&lt;s”的意思，它会正常去输出这两个字符，而当输出的字符显示在浏览器的时候，HTML会对其再进行一次解析，而这个”&lt;”在这个时候就成了标签的，当你后面跟上字母或者某些特殊字符的时候，浏览器会认为他们是一个标签，因此输出的结果是空白，而实际上在源代码中是可以看到的。</p>
 <p>​    <img src="https://www.hualigs.cn/image/6084222d6bcda.jpg"></p>
 <p>​    在实际运用中，对于PHP来说，echo “” 中的内容就是要输出的，因此PHP代码中遇到类似的情况不用管显示问题，因为PHP是正常执行的，而如果要让它显示出来的话，可以用&amp;lt;来代替（在写这篇文章的时候用到了\转义来正常显示）。</p>
 <p>​    因此，在我开篇的情况下，我的实际PHP代码是正确的，我并不需要去更改代码，因为我是需要它去运行，而不是输出。</p>
