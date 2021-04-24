@@ -81,34 +81,20 @@
 
 
 
-<meta name="description" content="前言​    大清早竟被同学唤醒，说辅导员让我给他打电话，打开QQ发现辅导员已发来数条消息，昨夜的网抑竟被发现！是我屏蔽的失误还是辅导员已黑入腾讯在我的空间漫游？亦或有其他隐情？欢迎收看本期节目 – 网抑患者竟被背后捅刀。 ​    标题只是增加文章趣味性和夸张性，不指代当事人任何行为。 ​    文章写的有点冗长，看官请见谅。">
+<meta name="description" content="前言​    前段时间在写免杀webshell的时候，大概是经过一系列读取操作之后进行拼接，因为存在一定的不确定性，所以需要调试一下，把拼接之后的内容echo出来去判断有没有正确拼接，于是遇到了一个关于PHP和浏览器前端的差异问题，在这里记录一下，感谢宁大叔小怪兽师傅给我的帮助。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="到底是谁在背后捅我？">
-<meta property="og:url" content="http://example.com/2021/04/08/%E5%88%B0%E5%BA%95%E6%98%AF%E8%B0%81%E5%9C%A8%E8%83%8C%E5%90%8E%E6%8D%85%E6%88%91%EF%BC%9F/index.html">
+<meta property="og:title" content="记录一次PHP与前端之间的踩坑">
+<meta property="og:url" content="http://example.com/2021/04/24/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1PHP%E4%B8%8E%E5%89%8D%E7%AB%AF%E4%B9%8B%E9%97%B4%E7%9A%84%E8%B8%A9%E5%9D%91/index.html">
 <meta property="og:site_name" content="薛定的_饿猫">
-<meta property="og:description" content="前言​    大清早竟被同学唤醒，说辅导员让我给他打电话，打开QQ发现辅导员已发来数条消息，昨夜的网抑竟被发现！是我屏蔽的失误还是辅导员已黑入腾讯在我的空间漫游？亦或有其他隐情？欢迎收看本期节目 – 网抑患者竟被背后捅刀。 ​    标题只是增加文章趣味性和夸张性，不指代当事人任何行为。 ​    文章写的有点冗长，看官请见谅。">
+<meta property="og:description" content="前言​    前段时间在写免杀webshell的时候，大概是经过一系列读取操作之后进行拼接，因为存在一定的不确定性，所以需要调试一下，把拼接之后的内容echo出来去判断有没有正确拼接，于是遇到了一个关于PHP和浏览器前端的差异问题，在这里记录一下，感谢宁大叔小怪兽师傅给我的帮助。">
 <meta property="og:locale">
-<meta property="og:image" content="https://www.hualigs.cn/image/606f2f194fbbc.jpg">
-<meta property="og:image" content="https://www.hualigs.cn/image/606f30d30f9e0.jpg">
-<meta property="og:image" content="https://www.hualigs.cn/image/606f2f194fbbc.jpg">
-<meta property="og:image" content="https://www.hualigs.cn/image/606f347ba2f6f.jpg">
-<meta property="og:image" content="https://www.hualigs.cn/image/606f353cb8498.jpg">
-<meta property="og:image" content="https://www.hualigs.cn/image/606f35a680f60.jpg">
-<meta property="og:image" content="https://www.hualigs.cn/image/606f35a67ebd7.jpg">
-<meta property="og:image" content="https://www.hualigs.cn/image/606f375a0ad90.jpg">
-<meta property="og:image" content="https://www.hualigs.cn/image/606f3b68a1404.jpg">
-<meta property="og:image" content="https://www.hualigs.cn/image/606f48be771f9.jpg">
-<meta property="og:image" content="https://www.hualigs.cn/image/606f47d4925dd.jpg">
-<meta property="og:image" content="https://www.hualigs.cn/image/606f3dad97dc0.jpg">
-<meta property="og:image" content="https://www.hualigs.cn/image/606f3f570c50d.jpg">
-<meta property="og:image" content="https://www.hualigs.cn/image/606f41bda0c4f.jpg">
-<meta property="og:image" content="https://www.hualigs.cn/image/606f418d96ce2.jpg">
-<meta property="og:image" content="https://www.hualigs.cn/image/606f4609f0ac9.jpg">
-<meta property="article:published_time" content="2021-04-08T15:28:54.000Z">
-<meta property="article:modified_time" content="2021-04-08T18:35:52.439Z">
+<meta property="og:image" content="https://www.hualigs.cn/image/608420b22756a.jpg">
+<meta property="og:image" content="https://www.hualigs.cn/image/6084222d6bcda.jpg">
+<meta property="article:published_time" content="2021-04-24T12:57:38.000Z">
+<meta property="article:modified_time" content="2021-04-24T14:17:52.378Z">
 <meta property="article:author" content="薛定的_饿猫">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.hualigs.cn/image/606f2f194fbbc.jpg">
+<meta name="twitter:image" content="https://www.hualigs.cn/image/608420b22756a.jpg">
 
 
 
@@ -138,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://example.com/2021/04/08/到底是谁在背后捅我？/"/>
+  <link rel="canonical" href="http://example.com/2021/04/24/记录一次PHP与前端之间的踩坑/"/>
 
 
 
 
 
-  <title>到底是谁在背后捅我？ | 薛定的_饿猫</title>
+  <title>记录一次PHP与前端之间的踩坑 | 薛定的_饿猫</title>
   
 
 
@@ -285,7 +271,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/08/%E5%88%B0%E5%BA%95%E6%98%AF%E8%B0%81%E5%9C%A8%E8%83%8C%E5%90%8E%E6%8D%85%E6%88%91%EF%BC%9F/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/24/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1PHP%E4%B8%8E%E5%89%8D%E7%AB%AF%E4%B9%8B%E9%97%B4%E7%9A%84%E8%B8%A9%E5%9D%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -302,7 +288,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">到底是谁在背后捅我？</h1>
+          <h1 class="post-title" itemprop="name headline">记录一次PHP与前端之间的踩坑</h1>
         
 
         <div class="post-meta">
@@ -314,8 +300,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-08T23:28:54+08:00">
-                2021-04-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-24T20:57:38+08:00">
+                2021-04-24
               </time>
             
 
@@ -337,8 +323,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A4%BE%E4%BC%9A%E5%B7%A5%E7%A8%8B%E5%AD%A6/" itemprop="url" rel="index">
-                    <span itemprop="name">社会工程学</span>
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
                   </a>
                 </span>
 
@@ -374,97 +360,27 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    大清早竟被同学唤醒，说辅导员让我给他打电话，打开QQ发现辅导员已发来数条消息，昨夜的网抑竟被发现！是我屏蔽的失误还是辅导员已黑入腾讯在我的空间漫游？亦或有其他隐情？欢迎收看本期节目 – 网抑患者竟被背后捅刀。</p>
-<p>​    标题只是增加文章趣味性和夸张性，不指代当事人任何行为。</p>
-<p>​    文章写的有点冗长，看官请见谅。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    前段时间在写免杀webshell的时候，大概是经过一系列读取操作之后进行拼接，因为存在一定的不确定性，所以需要调试一下，把拼接之后的内容echo出来去判断有没有正确拼接，于是遇到了一个关于PHP和浏览器前端的差异问题，在这里记录一下，感谢宁大叔小怪兽师傅给我的帮助。</p>
 <span id="more"></span>
 
-<h2 id="前因"><a href="#前因" class="headerlink" title="前因"></a>前因</h2><p>​    事情是这样婶儿的，大家都知道大学期间有很多的创新创业比赛，本着对未来的憧憬，我和我团队的小伙伴们在大一刚进校的时候就忙不停蹄的开始准备这些比赛，期间有两个项目，在大一参加互联网+的时候，舍弃了一个项目，另外一个项目最终获得了校赛金奖第一名以及省赛铜奖的成绩。</p>
-<p>​    当时这些东西我们搞得很累，从0开始学习写论文，怎么做专利到后面准备比赛，做PPT，路演等等，特别是最后我们的一些成果被某些校外认人士剽窃（这是后话了），所以在参加过一次这种比赛并且获得不错的名次之后我们便决定不再参加此类比赛了。</p>
-<p>​    但是参加比赛对学生来说是很有意义的，我们的辅导员无论是从自己作为辅导员的职责以及希望我们更好的成长的方面来说，也很鼓励我们去参加这些比赛，在辅导员多次询问我是否参加今年的挑战杯后，我便报了名（这里就是我后面为什么删除说说的原因，不是我觉得自己说错了什么，而是我的表述存在一定问题，容易让人误会是辅导员强迫我们参加）。</p>
-<p>​    比赛正值清明假期，当时我正在和女朋友在外面玩（她是我初恋，高中同学，在一起三年，也异地了三年，所以在一起的机会我都很珍惜），与此同时我还面临着腾讯安排在清明节假期结束第二天的面试，又要准备挑战杯的比赛，还有公司的一些事情。当时压力真的很大了，因此我们便决定“水”过这个比赛。</p>
-<p>​    花了几分钟把大一的一些专利和论文稍微整理了一下，便打包发给了学校。PPT稍微花了些时间，一个下午的样子重新写了一个PPT，此时已经是比赛答辩的前一天了，直到我上场路演的前一秒，我还把PPT稍微改了一下，就这样没有任何准备的上场了（不是不屑于准备，是没时间。面试，比赛都安排在节后的几天）。</p>
-<p>​    为了防止再次出现后文的这种人，我就简单的说下结果：</p>
-<ol>
-<li><p>打包论文专利发送过去，晋级校决赛</p>
-</li>
-<li><p>路演后晋级省赛（写文章的时候刚把省赛报名搞完）</p>
-<p>于是乎我就在空间发了这样的一条说说（第五句应该是老师一直想让我们参加，不参加不行的意思是多次提起这件事再拒绝不好意思，这里表述有误，所以后面删掉了说说，而不是后文即将出现的截图那样）</p>
-<p><img src="https://www.hualigs.cn/image/606f2f194fbbc.jpg"></p>
-<p>​    就这样很正常的吐槽（如果你非觉得我在凡尔赛那还是不要看下去了），我空间没有屏蔽任何人，但是因为是吐槽性质，所以屏蔽了老师，这个操作没问题把？每个人都屏蔽过老师甚至不开放空间或者朋友圈吧。然后事情并没有这么简单，当我第二天早上在比赛中搏杀的时候，班长敲开了我的门。。。我一看手机，好家伙</p>
-</li>
-</ol>
-<p><img src="https://www.hualigs.cn/image/606f30d30f9e0.jpg"></p>
-<p>​    这波我直呼内行，比赛也不打了，在思考怎么回事，后续跟辅导员通了电话进行了交谈，删掉了说说并且对为辅导员带来一些麻烦而道歉（这里再给昊哥说声对不起）。不过从辅导员这里我也得知了一个消息</p>
-<table>
-<thead>
-<tr>
-<th>有人把截图发给了一个老师，这位老师直接找了党政办（或者校团委）的老师，后续又告知了此次比赛评委（我们两次晋级）和昊哥</th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-</tr>
-</tbody></table>
-<p>​    得知这个消息我人傻掉了，为什么会有人做出来这种事情，真会有人把别人的吐槽转手截图发给老师吗？我和我的小伙伴们全都惊呆了！</p>
-<p>​    于是在结束和昊哥的通话后我便开始了溯源，而唯一的线索就是那张截图。</p>
-<p>​    在此做出声明，本次溯源目的在于弄清楚事情的来龙去脉，我没有做出任何的打击报复行为，纯粹是因为好奇所以才有了这篇文章，整件事情的有关截图等信息均有严格打码，没有泄露对方任何信息。</p>
-<h2 id="线索分析"><a href="#线索分析" class="headerlink" title="线索分析"></a>线索分析</h2><p>​    可以说只有这一张截图是比较难在我近1000个好友中找到那一个人的，但是一切都有迹可循。</p>
-<p>​    首先看这张图</p>
-<p><img src="https://www.hualigs.cn/image/606f2f194fbbc.jpg"></p>
-<p>​    一眼看过去便能看到这个截图中手机的任务栏是比较有特色的，在群里问了一下得知是一加（oneplus）</p>
-<p><img src="https://www.hualigs.cn/image/606f347ba2f6f.jpg"></p>
-<p>​    知道了手机型号之后，便尝试找到我列表中所有用一加手机的人</p>
-<p>​    首先打开QQ的运动</p>
-<p><img src="https://www.hualigs.cn/image/606f353cb8498.jpg"></p>
-<p>​    查看好友步数排名</p>
-<p>​                                                <img src="https://www.hualigs.cn/image/606f35a680f60.jpg"></p>
-<p>​    在这里可以看到排名中所有好友的手机型号</p>
-<p>​                                                            <img src="https://www.hualigs.cn/image/606f35a67ebd7.jpg"></p>
-<p>​    因为用一加手机的同学并不多，所以比较好筛选，查看了四百多个好友的手机型号 ，去除一些一定不会做这种事情的人，还剩下大概三四个人，当时就怕截图的人没有开启QQ运动，就没有他的步数。</p>
-<p>​    我们再回过头来看截图，可以看到有一个点赞的人他给了备注，是计科某班的团支书，既然他又备注，又是我的好友，这个人又是我一个学姐，于是去查看跟这位学姐的共同好友，好家伙，不看不知道，一看就是31个人。</p>
-<p>​    <img src="https://www.hualigs.cn/image/606f375a0ad90.jpg"></p>
-<p>​    问题不大，继续分析，再看截图的备注，“计科x班团支书xx”</p>
-<p>​    有没有觉得这个备注有点怪异？没错，第一没有给备注打上年纪，所以很有可能跟这个学姐是同一届，另外这个团支书就很怪异，盲猜这个人可能是班委，因为班委之间很多事情需要去沟通，所以需要打上备注，这样A专业的学习委员才能找到B专业的生活委员。</p>
-<p>​    这样的话就有了一个不一定完全正确的范围，2018级的班委</p>
-<p>​    不过根据截图，这个人也没有给我打上备注，所以保险起见就把范围扩大到了20，18两个年级的班委当中，至于为什么不算19的，因为我就是19的，跟大家关系也还不错，所以第一时间没有考虑这个。</p>
-<p>整理线索：20，18级中用一加手机的班委，并且是我的好友</p>
-<p>范围已经很小了</p>
-<p>​    这里实名感谢某班委学妹，太顶了，当时忙着找其他线索（为了不让本来就长的文章变得更长，省略了很多推理，后面会在文章末尾稍微总结一下尝试过的方法），就让朋友帮我找一下这个学妹，要一下20的班委名单，好家伙，看的我眼花缭乱。</p>
-<p><img src="https://www.hualigs.cn/image/606f3b68a1404.jpg"></p>
-<p>​    线索到这里的时候其实已经比较明朗了，各种排查下来就只剩下了两个人，而其中一个学长我在空间历史消息中看到了他的点赞，而截图中是没有点赞的，所以只剩下了一个目标。去问了一下18级的几个学姐，发现这个学长今年并没有参加挑战杯，这就让人迷茫了，没有参加挑战杯为什么要搞我 ，要是参加了的话那证据基本上就是定了，可是这没参加的话我确实不好下定论。</p>
-<p>​    <img src="https://www.hualigs.cn/image/606f48be771f9.jpg"></p>
-<p>​    查看目标的空间，可以看到学姐的点赞，所以可以确定这个目标跟我和点赞学姐是共同好友。</p>
-<p><img src="https://www.hualigs.cn/image/606f47d4925dd.jpg"></p>
-<p>​    推到这个地方基本上就卡死了，下午去上了课后回来一直在想这个事情，难道就停在这了吗？</p>
-<h2 id="柳暗花明"><a href="#柳暗花明" class="headerlink" title="柳暗花明"></a>柳暗花明</h2><p>​    回来后因为一条线索向一个发际线略高的学姐求助（手动狗头），因为看得到对方给点赞学姐的备注，那么只要看到目标给这位学姐的备注是不是这个那么就可以确定了，但是这个实在不是很好操作。谈到后面的时候学姐突然一语点醒了我，</p>
-<p>​    <img src="https://www.hualigs.cn/image/606f3dad97dc0.jpg"></p>
-<p>​    看到这句话我突然悟了，我发现这人给我的备注是“软工-xxx”，而我一般的备注方式是19-软工-xxx或者19软工xxx，也就是我一般都习惯带上年级，我悟了。</p>
-<p>​    于是打开每一个跟学校有关的群，查看我备注为软工-xxx的群，最后找到一个符合要求的群。</p>
-<p>​    查看群员列表，目标确实在群中。</p>
-<p>​    <img src="https://www.hualigs.cn/image/606f3f570c50d.jpg"></p>
-<p>​    到这里基本上就确定目标了，于是我决定去问一问。</p>
-<h2 id="一探究竟"><a href="#一探究竟" class="headerlink" title="一探究竟"></a>一探究竟</h2><p><img src="https://www.hualigs.cn/image/606f41bda0c4f.jpg"></p>
-<p>都是完整聊天记录，中途这位室友同学加我了，不过看了一下，应该是发了截图给老师之后就把我删了，被我发现后又加了我。</p>
-<p><img src="https://www.hualigs.cn/image/606f418d96ce2.jpg"></p>
-<p>然后又把我删了。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>​    这件事情我的言辞很容易让人产生误会，这对昊哥来说是很不好的事情，这也是我删除说说的原因所在。但是除此之外我并没有对其他任何人，任何制度，任何政策进行任何攻击 ，我的所言所行皆是实话，我不需要靠这个比赛去炫耀什么，这个比赛在我奖项，项目中毫不起眼（当然我现在打算考研，昊哥说这个还是很有帮助的），我知道很多人不会理解，这也是最容易让人误会的，觉得我就是在凡尔赛，觉得我态度傲慢，觉得我挑战权威。</p>
-<p>​    其实真的没有这么复杂，于我而言我只是做了一件很普通的事情只是结果出乎意料，虽然它是好的，但是对我有一定困扰，因此我发说说吐槽一下，就是这么简单。吐槽也只是吐槽我们自己，没怎么上心却一直晋级，绝对没有看不起比赛，老师或者其他任何人的意思。</p>
-<p>​    我希望我在我空间所发布的言论，是我随心所发，发给朋友们看看，分享自己的日常，而不是万事小心防着人。</p>
-<p>​    总而言之：</p>
-<pre><code>1. 我的措辞容易让人误会，给昊哥带来不好的影响
- 2. 容易让人误会我态度有问题，其实我真的是很谦虚的一个人了，一直以菜自称（我是真的好菜），向他人学习，接触越多，越知道自己的不足，很多东西真不是校园能学到的，我也希望所有同学能尝试一些学校外的东西，去试试做做项目，而不是在学校三点一线，吃喝玩乐，这也是我经常劝身边朋友的，计算机真的很需要你自学，去接触计算机的圈子。
- 3. 我，真的真的真的没有半点凡尔赛，半点狂妄自大。得知晋级我们团队内部第一反应如下：
-</code></pre>
-<p><img src="https://www.hualigs.cn/image/606f4609f0ac9.jpg"></p>
-<p>挺感慨的，大家也自有定论。</p>
-<p>感谢今天很多同学，朋友的帮助，理解，安慰。</p>
-<p>还有一个暴躁学姐，太顶了。</p>
-<p>很感谢大家，很高兴能认识大家。</p>
-<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>​    在溯源期间还尝试了很多其他的方法，比如根据截图的时间去看那个范围时间的空间访客，但是我开了一个月豪华黄钻，下载了QQ空间客户端之后缺依然只能看到当天的访客，不知道是不是把说说删了的问题（说说是在7号晚上发的，溯源是在8号进行的）。</p>
-<p>​    还有对目标的空间进行信息收集。</p>
-<p>​    还有一些啥忘记了，就不细想了，明早还得去昊哥办公室。</p>
-<p>​    不知道学校后面会怎么处理，先活在当下吧。</p>
+<p>​    PHP的输出语句是echo，在调试的时候，我发现拼接之后echo不出来，浏览器显示是空白，难道根本就没有读取到吗？于是我把读取拼接之后的内容fwrite到txt中去，发现是没有问题的，直接写到代码里：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;?php eval(\$_POST[\&#x27;cmd\&#x27;]);?&gt;&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    运行之后出现了怪事，浏览器的显示依然为空白，经过调试之后我发现，问题出在“&lt;”这个符号上面。当我把这个符号去掉之后，后面的字符串便可以访问了。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;?php eval(\$_POST[\&#x27;cmd\&#x27;]);?&gt;&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    输出如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?php eval($_POST[\&#39;cmd\&#39;]);?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​    继续调试可以发现，当“&lt;”符号后面是某些特殊字符或者数字的时候是可以正常输出的，而当后面是“？”和其他某些特殊字符或者字母的时候，浏览器的显示均是空白。</p>
+<p>​    <img src="https://www.hualigs.cn/image/608420b22756a.jpg"></p>
+<p>​    这里涉及到HTML实体，当 echo “&lt;s” 这一句代码在PHP中执行的时候，对于PHP来说，就是输出“&lt;?”的意思，它会正常去输出这两个字符，而当输出的字符显示在浏览器的时候，HTML会对其再进行一次解析，而这个”&lt;”在这个时候就成了标签的，当你后面跟上字母或者某些特殊字符的时候，浏览器会认为他们是一个标签，因此输出的结果是空白，而实际上在源代码中是可以看到的。</p>
+<p>​    <img src="https://www.hualigs.cn/image/6084222d6bcda.jpg"></p>
+<p>​    在实际运用中，对于PHP来说，echo “” 中的内容就是要输出的，因此PHP代码中遇到类似的情况不用管显示问题，因为PHP是正常执行的，而如果要让它显示出来的话，可以用&amp;lt;来代替（在写这篇文章的时候用到了\转义来正常显示）。</p>
+<p>​    因此，在我开篇的情况下，我的实际PHP代码是正确的，我并不需要去更改代码，因为我是需要它去运行，而不是输出。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">为了运行: </span><br><span class="line">	<span class="meta">&lt;?</span></span><br><span class="line">		<span class="keyword">echo</span> <span class="string">&quot;&lt;?php eval(\$_POST[\&#x27;cmd\&#x27;]);?&gt;&quot;</span>;</span><br><span class="line">	<span class="meta">?&gt;</span></span><br><span class="line">为了输出:</span><br><span class="line">	<span class="meta">&lt;?</span></span><br><span class="line">		<span class="keyword">echo</span> <span class="string">&quot;&amp;lt;?php eval(\$_POST[\&#x27;cmd\&#x27;]);?&gt;&quot;</span>;</span><br><span class="line">	<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    此外，还有两个HTML实体的编码函数，不过似乎不适用此处的运用场景。</p>
 
       
     </div>
@@ -489,15 +405,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2021/04/08/%E5%88%B0%E5%BA%95%E6%98%AF%E8%B0%81%E5%9C%A8%E8%83%8C%E5%90%8E%E6%8D%85%E6%88%91%EF%BC%9F/" rel="next" title="到底是谁在背后捅我？">
+                <i class="fa fa-chevron-left"></i> 到底是谁在背后捅我？
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2021/04/24/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1PHP%E4%B8%8E%E5%89%8D%E7%AB%AF%E4%B9%8B%E9%97%B4%E7%9A%84%E8%B8%A9%E5%9D%91/" rel="prev" title="记录一次PHP与前端之间的踩坑">
-                记录一次PHP与前端之间的踩坑 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -631,7 +547,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E5%9B%A0"><span class="nav-text">前因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%B4%A2%E5%88%86%E6%9E%90"><span class="nav-text">线索分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%B3%E6%9A%97%E8%8A%B1%E6%98%8E"><span class="nav-text">柳暗花明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E6%8E%A2%E7%A9%B6%E7%AB%9F"><span class="nav-text">一探究竟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E"><span class="nav-text">写在最后</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li></ol></div>
             
 
           </div>

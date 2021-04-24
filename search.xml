@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>记录一次PHP与前端之间的踩坑</title>
+    <url>/2021/04/24/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1PHP%E4%B8%8E%E5%89%8D%E7%AB%AF%E4%B9%8B%E9%97%B4%E7%9A%84%E8%B8%A9%E5%9D%91/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    前段时间在写免杀webshell的时候，大概是经过一系列读取操作之后进行拼接，因为存在一定的不确定性，所以需要调试一下，把拼接之后的内容echo出来去判断有没有正确拼接，于是遇到了一个关于PHP和浏览器前端的差异问题，在这里记录一下，感谢宁大叔小怪兽师傅给我的帮助。</p>
+<span id="more"></span>
+
+<p>​    PHP的输出语句是echo，在调试的时候，我发现拼接之后echo不出来，浏览器显示是空白，难道根本就没有读取到吗？于是我把读取拼接之后的内容fwrite到txt中去，发现是没有问题的，直接写到代码里：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;?php eval(\$_POST[\&#x27;cmd\&#x27;]);?&gt;&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    运行之后出现了怪事，浏览器的显示依然为空白，经过调试之后我发现，问题出在“&lt;”这个符号上面。当我把这个符号去掉之后，后面的字符串便可以访问了。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;?php eval(\$_POST[\&#x27;cmd\&#x27;]);?&gt;&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    输出如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">?php eval($_POST[\&#39;cmd\&#39;]);?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​    继续调试可以发现，当“&lt;”符号后面是某些特殊字符或者数字的时候是可以正常输出的，而当后面是“？”和其他某些特殊字符或者字母的时候，浏览器的显示均是空白。</p>
+<p>​    <img src="https://www.hualigs.cn/image/608420b22756a.jpg"></p>
+<p>​    这里涉及到HTML实体，当 echo “&lt;s” 这一句代码在PHP中执行的时候，对于PHP来说，就是输出“&lt;?”的意思，它会正常去输出这两个字符，而当输出的字符显示在浏览器的时候，HTML会对其再进行一次解析，而这个”&lt;”在这个时候就成了标签的，当你后面跟上字母或者某些特殊字符的时候，浏览器会认为他们是一个标签，因此输出的结果是空白，而实际上在源代码中是可以看到的。</p>
+<p>​    <img src="https://www.hualigs.cn/image/6084222d6bcda.jpg"></p>
+<p>​    在实际运用中，对于PHP来说，echo “” 中的内容就是要输出的，因此PHP代码中遇到类似的情况不用管显示问题，因为PHP是正常执行的，而如果要让它显示出来的话，可以用&amp;lt;来代替（在写这篇文章的时候用到了\转义来正常显示）。</p>
+<p>​    因此，在我开篇的情况下，我的实际PHP代码是正确的，我并不需要去更改代码，因为我是需要它去运行，而不是输出。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">为了运行: </span><br><span class="line">	<span class="meta">&lt;?</span></span><br><span class="line">		<span class="keyword">echo</span> <span class="string">&quot;&lt;?php eval(\$_POST[\&#x27;cmd\&#x27;]);?&gt;&quot;</span>;</span><br><span class="line">	<span class="meta">?&gt;</span></span><br><span class="line">为了输出:</span><br><span class="line">	<span class="meta">&lt;?</span></span><br><span class="line">		<span class="keyword">echo</span> <span class="string">&quot;&amp;lt;?php eval(\$_POST[\&#x27;cmd\&#x27;]);?&gt;&quot;</span>;</span><br><span class="line">	<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>​    此外，还有两个HTML实体的编码函数，不过似乎不适用此处的运用场景。</p>
+]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+  </entry>
+  <entry>
     <title>到底是谁在背后捅我？</title>
     <url>/2021/04/08/%E5%88%B0%E5%BA%95%E6%98%AF%E8%B0%81%E5%9C%A8%E8%83%8C%E5%90%8E%E6%8D%85%E6%88%91%EF%BC%9F/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    大清早竟被同学唤醒，说辅导员让我给他打电话，打开QQ发现辅导员已发来数条消息，昨夜的网抑竟被发现！是我屏蔽的失误还是辅导员已黑入腾讯在我的空间漫游？亦或有其他隐情？欢迎收看本期节目 – 网抑患者竟被背后捅刀。</p>
